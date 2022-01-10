@@ -34,6 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         // 이름이 null인, 최대 플레이어 수가 2명인 룸을 생성
         Debug.LogWarning("PhotonNetwork Error " + returnCode + ": " + message);
         PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
+        Debug.Log("PhotonNetwork: Create New Room");
     }
 
     public override void OnJoinedRoom() {
