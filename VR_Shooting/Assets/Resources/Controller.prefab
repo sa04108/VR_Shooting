@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 7449570242064868401}
   - component: {fileID: -8771876995869222051}
   - component: {fileID: 3978762433361910895}
+  - component: {fileID: -7147859416102736941}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -155,3 +156,15 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-7147859416102736941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437784660110188105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d821367bcad8e9540bfcdc5a7c444369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

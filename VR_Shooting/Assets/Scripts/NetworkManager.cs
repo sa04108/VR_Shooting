@@ -40,10 +40,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedRoom() {
-        var controller = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
-
-        if (controller.GetComponent<PhotonView>().IsMine == false)
-            controller.GetComponent<SteamVR_Behaviour_Pose>().enabled = false;
+        PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
     }
 
     #endregion
