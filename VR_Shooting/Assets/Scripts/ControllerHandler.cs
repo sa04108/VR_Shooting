@@ -10,6 +10,6 @@ public class ControllerHandler : MonoBehaviourPun
     void Start()
     {
         if (photonView.IsMine)
-            gameObject.AddComponent<SteamVR_Behaviour_Pose>();
+            GetComponent<SteamVR_Behaviour_Pose>().enabled = true;
     }
 }
