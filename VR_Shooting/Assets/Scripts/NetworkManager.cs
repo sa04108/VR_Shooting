@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Valve.VR;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -38,7 +39,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedRoom() {
-        PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
+        var controller = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
+
+        if (photonView.IsMine == false)
+            controller.GetComponent<SteamVR_Behaviour_Pose>().enabled = false;
     }
 
     #endregion
