@@ -10,6 +10,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private void Awake() {
         // MasterClient가 PhotonNetwork.LoadLevel()을 통해 씬을 전환하면, 같은 룸에 있는 다른 인원들도 같이 같은 씬으로 이동할지를 정하는 변수
         PhotonNetwork.AutomaticallySyncScene = true;
+        Application.targetFrameRate = 10;
     }
 
     private void Start() {
