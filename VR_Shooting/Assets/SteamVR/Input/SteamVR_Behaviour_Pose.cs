@@ -68,7 +68,7 @@ namespace Valve.VR
 
         protected SteamVR_HistoryBuffer historyBuffer = new SteamVR_HistoryBuffer(30);
 
-
+        public Vector3 devicePositionPreset;
         protected virtual void Start()
         {
             if (poseAction == null)
@@ -126,12 +126,12 @@ namespace Valve.VR
 
             if (origin != null)
             {
-                transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition);
+                transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition) + devicePositionPreset;
                 transform.rotation = origin.rotation * poseAction[inputSource].localRotation;
             }
             else
             {
-                transform.localPosition = poseAction[inputSource].localPosition;
+                transform.localPosition = poseAction[inputSource].localPosition + devicePositionPreset;
                 transform.localRotation = poseAction[inputSource].localRotation;
             }
         }
