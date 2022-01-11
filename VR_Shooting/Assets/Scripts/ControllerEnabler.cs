@@ -6,12 +6,19 @@ using Valve.VR;
 
 public class ControllerEnabler : MonoBehaviourPun
 {
+    SteamVR_Behaviour_Pose behaviourPose;
+    ControllerHandler handler;
+
     // Start is called before the first frame update
     void Start()
     {
+        behaviourPose = GetComponent<SteamVR_Behaviour_Pose>();
+        handler = GetComponent<ControllerHandler>();
+
         if (photonView.IsMine) {
-            GetComponent<SteamVR_Behaviour_Pose>().enabled = true;
-            GetComponent<ControllerHandler>().enabled = true;
+            behaviourPose.enabled = true;
+
+            handler.enabled = true;
         }
     }
 }

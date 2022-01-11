@@ -39,7 +39,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedRoom() {
-        PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
+        var controllerObject1 = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
+        controllerObject1.GetComponent<SteamVR_Behaviour_Pose>().inputSource = SteamVR_Input_Sources.LeftHand;
+
+        var controllerObject2 = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
+        controllerObject2.GetComponent<SteamVR_Behaviour_Pose>().inputSource = SteamVR_Input_Sources.RightHand;
     }
 
     #endregion
