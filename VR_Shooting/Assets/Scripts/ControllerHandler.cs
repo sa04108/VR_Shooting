@@ -4,12 +4,12 @@ using UnityEngine;
 using Valve.VR;
 
 
-public class ControllerHandler : MonoBehaviour
-{
+public class ControllerHandler : MonoBehaviour {
     [SerializeField] SteamVR_Action_Boolean inputAction;
-    SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
+    SteamVR_Input_Sources inputSource;
 
     private void OnEnable() {
+        inputSource = GetComponent<SteamVR_Behaviour_Pose>().inputSource;
         inputAction.AddOnStateDownListener(OnPress, inputSource);
     }
 
@@ -18,6 +18,7 @@ public class ControllerHandler : MonoBehaviour
     }
 
     private void OnPress(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource) {
+        transform.parent.rotation = Quaternion.Euler(-transform.localRotation.eulerAngles);
         Debug.Log(fromSource + " " + fromAction.state);
     }
 

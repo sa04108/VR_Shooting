@@ -17,7 +17,6 @@ public class ControllerEnabler : MonoBehaviourPun
 
         if (photonView.IsMine) {
             behaviourPose.enabled = true;
-
             handler.enabled = true;
         }
     }

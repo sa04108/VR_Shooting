@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using Valve.VR;
 
-public class NetworkManager : MonoBehaviourPunCallbacks
+public class NetworkManager : Singleton<NetworkManager>
 {
     private void Awake() {
         // MasterClient가 PhotonNetwork.LoadLevel()을 통해 씬을 전환하면, 같은 룸에 있는 다른 인원들도 같이 같은 씬으로 이동할지를 정하는 변수
@@ -39,11 +39,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedRoom() {
-        var controllerObject1 = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
-        controllerObject1.GetComponent<SteamVR_Behaviour_Pose>().inputSource = SteamVR_Input_Sources.LeftHand;
-
-        var controllerObject2 = PhotonNetwork.Instantiate("Controller", Vector3.zero, Quaternion.identity);
-        controllerObject2.GetComponent<SteamVR_Behaviour_Pose>().inputSource = SteamVR_Input_Sources.RightHand;
+        PhotonNetwork.Instantiate("Controllers", Vector3.zero, Quaternion.identity);
     }
 
     #endregion

@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vr_shooting.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\diddn\\OneDrive\\바탕 화면\\VR_Shooting\\VR_Shooting\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\hyunb\\Documents\\Github\\VR_Shooting\\VR_Shooting\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "VR_Shooting [Testing]"
