@@ -18,7 +18,7 @@ public class ControllerHandler : MonoBehaviour {
     }
 
     private void OnPress(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource) {
-        transform.parent.rotation = Quaternion.Euler(-transform.localRotation.eulerAngles);
+
         Debug.Log(fromSource + " " + fromAction.state);
     }
 
