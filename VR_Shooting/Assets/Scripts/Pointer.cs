@@ -18,14 +18,14 @@ public class Pointer : MonoBehaviour
     void Update()
     {
         RaycastHit hitEnemy;
-        int layerMaskEnemy = 1 << LayerMask.NameToLayer("Monster"); // 1000 0000 = 128
+        int layerMaskEnemy = 1 << LayerMask.NameToLayer("Monster");
         if (Physics.Raycast(transform.position, transform.forward, out hitEnemy, float.PositiveInfinity, layerMaskEnemy))
         {
             Debug.Log(hitEnemy.collider.transform.name);
         }
 
         RaycastHit hitScreen;
-        int layerMaskScreen = 1 << LayerMask.NameToLayer("Screen"); // 0100 0000 = 64
+        int layerMaskScreen = 1 << LayerMask.NameToLayer("Screen");
         if (Physics.Raycast(transform.position, transform.forward, out hitScreen, float.PositiveInfinity, layerMaskScreen))
         {
             pointerImage.transform.SetPositionAndRotation(hitScreen.point, hitScreen.collider.transform.rotation);
